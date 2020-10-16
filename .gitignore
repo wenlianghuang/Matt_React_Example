@@ -1,0 +1,18 @@
+#Ignore all the "node_module"
+new-matt-app/node_modules/
+tic-tac-toc_example/node_modules/
+webpack-react-tutorial/node_modules/
+
+#Ignore all the ".vscode"
+new-matt-app/.vscode/
+tic-tac-toc_example/.vscode/
+webpack-react-tutorial/.vscode/
+.vscode
+
+#Ignore all "yarn.loac"
+webpack-react-tutorial/yarn.lock
+
+#Ignore all "package-lock.json"
+new-matt-app/package-lock.json
+tic-tac-toc/package-lock.json
+webpack-react-tutorial/package-lock.json
