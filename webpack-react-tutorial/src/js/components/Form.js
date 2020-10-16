@@ -116,9 +116,11 @@ class Form extends React.Component {
               records.map(e => <tr> {e} </tr>)
             */}
             
+            
             {this.state.inputArray.map((currValue,index) => (
               <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
             ))}
+            
           </tbody>
         </table>
         
