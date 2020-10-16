@@ -1,0 +1,33 @@
+//$myFont: Helvetica, sans-serif;
+$myColor: #8B008B;
+@mixin important-text($myColor) {
+    color: $myColor;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #000000;
+}
+#reacthelloworld {
+    @include important-text($myColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    /*
+    border: 1px solid #000000;
+    font: {
+        family: Helvetica, sans-serif;
+        size: 18px;
+        weight: bold;
+    }*/
+}
+
+
+#reacthelloworld p {        
+    color: $myColor;
+}
+
+#reacthelloworld button{
+    position: relative;
+    left: 2.0rem;
+}
