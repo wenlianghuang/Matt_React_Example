@@ -38,8 +38,8 @@ class Example extends React.Component {
                         <Form.Label>Email address</Form.Label>
                         <div className="w-50">
                         <Form.Control type="email" placeholder="Enter email" className="ControlWidth" />
-                        </div>
                         <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                        </div>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <div class="w-50">
