@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import '../../css/TestinClass.css'
+import Button from 'react-bootstrap/Button';
 
 class Form extends React.Component {
   constructor(props) {
@@ -65,11 +66,12 @@ class Form extends React.Component {
     //let test = this.state.inputArray.map((currElement,index)=>{return(currElement)})
     return (
       <div className="FormClass">
-          <label>Your Name: </label>
+          <label>Your Name </label>
           <br/>
           <input 
             type="text"
             name="array[]"
+            
           />
           <br/>
           <label>Subject</label>
@@ -77,6 +79,7 @@ class Form extends React.Component {
           <input
             type="text"
             name='array[]'
+            
             //value={this.state.value}
             //onChange={this.handleChange}
           />
@@ -86,19 +89,20 @@ class Form extends React.Component {
           <input 
             type="text"
             name='array[]'
+            
             //value={this.state.value}
             //onChange={this.handleChange}
           />
           <br/>
-          <button onClick={this.getSubjectandScores}>Submit</button>
+          <Button onClick={this.getSubjectandScores}>Submit</Button>
         <br/>
         
-        <select class="greentext" onChange={this.handleChange}>
+        <select onChange={this.handleChange}>
           <option disabled="disabled" selected="selected">Test</option>
-          <option class="greentext" value="Audi">Audi</option>
-          <option class="redtext" value="BMV">BMW</option>
-          <option class="bluetext" value="Mercedes">Mercedes</option>
-          <option class="yellowtext" value="Volvo">Volvo</option>
+          <option className="greentext" value="Audi">Audi</option>
+          <option className="redtext" value="BMV">BMW</option>
+          <option className="bluetext" value="Mercedes">Mercedes</option>
+          <option className="yellowtext" value="Volvo">Volvo</option>
         </select>
         <p class="demo">{this.state.value}</p>
         
@@ -112,14 +116,16 @@ class Form extends React.Component {
             {this.props.columnIndex.map(e => <th> {e} </th>)}
           </thead>
           <tbody className="TbodyClass">
-            {/*
-              records.map(e => <tr> {e} </tr>)
-            */}
             
             
-            {this.state.inputArray.map((currValue,index) => (
-              <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
-            ))}
+            
+            {this.state.inputArray.map((currValue,index) => {return(
+              <>
+                <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
+                <tr><td>Test1</td><td>Test2</td></tr>
+              </>
+              )
+            })}
             
           </tbody>
         </table>
