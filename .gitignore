@@ -16,3 +16,6 @@ webpack-react-tutorial/yarn.lock
 new-matt-app/package-lock.json
 tic-tac-toc/package-lock.json
 webpack-react-tutorial/package-lock.json
+
+#Ignore all the ".log"
+webpack-react-tutorial/*.log
