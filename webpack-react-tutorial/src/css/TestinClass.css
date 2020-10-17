@@ -87,6 +87,24 @@ and also iPads specifically.
     }
 }
 
+select{
+    color:aqua;
+}
+.greentext{
+    color: green;
+}
+
+.redtext{
+    color:red;
+}
+
+.yellowtext{
+    color:yellow;
+}
+
+.bluetext{
+    color:blue;
+}
 select {
     position: relative;
     top: 1.5em;

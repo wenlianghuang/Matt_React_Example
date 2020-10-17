@@ -66,12 +66,12 @@ class Form extends React.Component {
     //let test = this.state.inputArray.map((currElement,index)=>{return(currElement)})
     return (
       <div className="FormClass">
+          <label>Your Name: </label>
           <label>Your Name </label>
           <br/>
           <input 
             type="text"
             name="array[]"
-            
           />
           <br/>
           <label>Subject</label>
@@ -94,6 +94,15 @@ class Form extends React.Component {
             //onChange={this.handleChange}
           />
           <br/>
+          <button onClick={this.getSubjectandScores}>Submit</button>
+        <br/>
+        
+        <select class="greentext" onChange={this.handleChange}>
+          <option disabled="disabled" selected="selected">Test</option>
+          <option class="greentext" value="Audi">Audi</option>
+          <option class="redtext" value="BMV">BMW</option>
+          <option class="bluetext" value="Mercedes">Mercedes</option>
+          <option class="yellowtext" value="Volvo">Volvo</option>
           <Button onClick={this.getSubjectandScores}>Submit</Button>
         <br/>
         
@@ -116,6 +125,14 @@ class Form extends React.Component {
             {this.props.columnIndex.map(e => <th> {e} </th>)}
           </thead>
           <tbody className="TbodyClass">
+            {/*
+              records.map(e => <tr> {e} </tr>)
+            */}
+            
+            
+            {this.state.inputArray.map((currValue,index) => (
+              <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
+            ))}
             
             
             
