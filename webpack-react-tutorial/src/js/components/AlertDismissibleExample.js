@@ -50,7 +50,7 @@ class Example extends React.Component {
                     <Form.Group controlId="formBasciCheckbox">
                         <Form.Check type="checkbox" label="Check me out"/>
                     </Form.Group>
-                    <Button variant="primary" type="submit">Submit</Button>
+                    <Button variant="flat" size="xxl" type="submit">Submit</Button>
                 </Form>
 			</>
 		);

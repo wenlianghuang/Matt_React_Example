@@ -10,6 +10,11 @@ caption {
     font-size: 40px;
     border: 40px;
 }
+
+table caption{
+    caption-side: top;
+}
+
 /* Zebra striping */
 tr:nth-of-type(odd) {
     background: #eee;
@@ -90,21 +95,7 @@ and also iPads specifically.
 select{
     color:aqua;
 }
-.greentext{
-    color: green;
-}
 
-.redtext{
-    color:red;
-}
-
-.yellowtext{
-    color:yellow;
-}
-
-.bluetext{
-    color:blue;
-}
 select {
     position: relative;
     top: 1.5em;
@@ -123,3 +114,12 @@ p.demo{
     left: 1.5em;
 }
 
+.btn-flat{
+    background-color: purple;
+    color: white;
+}
+
+.btn-xxl{
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+}

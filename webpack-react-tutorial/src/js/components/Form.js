@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import '../../css/TestinClass.css'
 import Button from 'react-bootstrap/Button';
-
-class Form extends React.Component {
+import Form from 'react-bootstrap/Form'
+class FormInClass extends React.Component {
   constructor(props) {
     super(props);
 
@@ -66,7 +66,37 @@ class Form extends React.Component {
     //let test = this.state.inputArray.map((currElement,index)=>{return(currElement)})
     return (
       <div className="FormClass">
-          <label>Your Name: </label>
+          <Form>
+            <Form.Group controlId="formYourName">
+              <Form.Label>Your Name</Form.Label>
+              <div className="w-50">
+                <input 
+                type="text"
+                name="array[]"
+                />
+              </div>
+            </Form.Group>
+            <Form.Group controlId="formSubject">
+              <Form.Label>Subject</Form.Label>
+              <div className="w-50">
+              <input
+                type="text"
+                name='array[]'
+              /> 
+              </div>
+            </Form.Group>
+            <Form.Group controlId="formScore">
+              <Form.Label>Score</Form.Label>
+              <div className="w-50">
+                <input type="text"
+                name='array[]'
+              />
+              </div>
+            </Form.Group>
+            
+            <Button variant="flat" onClick={this.getSubjectandScores}>Submit</Button>
+          </Form>
+          {/*
           <label>Your Name </label>
           <br/>
           <input 
@@ -96,7 +126,8 @@ class Form extends React.Component {
           <br/>
           <button onClick={this.getSubjectandScores}>Submit</button>
         <br/>
-        
+          
+          */}
         <select class="greentext" onChange={this.handleChange}>
           <option disabled="disabled" selected="selected">Test</option>
           <option class="greentext" value="Audi">Audi</option>
@@ -104,15 +135,8 @@ class Form extends React.Component {
           <option class="bluetext" value="Mercedes">Mercedes</option>
           <option class="yellowtext" value="Volvo">Volvo</option>
           <Button onClick={this.getSubjectandScores}>Submit</Button>
-        <br/>
-        
-        <select onChange={this.handleChange}>
-          <option disabled="disabled" selected="selected">Test</option>
-          <option className="greentext" value="Audi">Audi</option>
-          <option className="redtext" value="BMV">BMW</option>
-          <option className="bluetext" value="Mercedes">Mercedes</option>
-          <option className="yellowtext" value="Volvo">Volvo</option>
         </select>
+        <br/>
         <p class="demo">{this.state.value}</p>
         
         <table>
@@ -131,18 +155,11 @@ class Form extends React.Component {
             
             
             {this.state.inputArray.map((currValue,index) => (
+              <>
               <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
+              </>
             ))}
             
-            
-            
-            {this.state.inputArray.map((currValue,index) => {return(
-              <>
-                <tr key={index}><td>{currValue.sub}</td><td>{currValue.sco}</td></tr>
-                <tr><td>Test1</td><td>Test2</td></tr>
-              </>
-              )
-            })}
             
           </tbody>
         </table>
@@ -152,7 +169,7 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default FormInClass;
 
 /*const wrapper = document.getElementById("container");
 wrapper ? ReactDOM.render(<Form />, wrapper) : false;
