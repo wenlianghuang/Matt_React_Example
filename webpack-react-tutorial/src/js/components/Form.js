@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import '../../css/TestinClass.css'
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import List from 'react-bootstrap/ListGroup';
+import ListGroup from "react-bootstrap/ListGroup";
 class FormInClass extends React.Component {
   constructor(props) {
     super(props);
@@ -10,19 +12,41 @@ class FormInClass extends React.Component {
     this.state = {
       value: "Waht is the brand of car",
       captionName: '',
-      inputArray: []
-      //captionName: ""
+      inputArray: [],
+
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);//Show the detail of different cars
     this.getSubjectandScores = this.getSubjectandScores.bind(this);
   }
 
   handleChange(event) {
+    //let yearofManufacture = {keyname: "2000"}
+    let yoM,Lit,miL;
+    if(event.target.value === "Audi"){
+      yoM = this.props.CarDetail.Audi[0][1];
+      Lit = this.props.CarDetail.Audi[1][1];
+      miL = this.props.CarDetail.Audi[2][1];
 
-    this.setState({value: event.target.value})
-
+    }else if(event.target.value === "BMW"){
+      yoM = this.props.CarDetail.BMW[0][1];
+      Lit = this.props.CarDetail.BMW[1][1];
+      miL = this.props.CarDetail.BMW[2][1];
+      
+    }else if(event.target.value === "Mercedes"){
+      yoM = this.props.CarDetail.Mercedes[0][1];
+      Lit = this.props.CarDetail.Mercedes[1][1];
+      miL = this.props.CarDetail.Mercedes[2][1];
+    }else if(event.target.value === "Volvo"){
+      yoM = this.props.CarDetail.Volvo[0][1];
+      Lit = this.props.CarDetail.Volvo[1][1];
+      miL = this.props.CarDetail.Volvo[2][1];
+    }
+    this.setState({value: event.target.value,yom:yoM,lit: Lit,mil: miL})
+  
   }
+
+
   getSubjectandScores(){
     var input = document.getElementsByName("array[]");
     let subjectandscore = this.state.inputArray.slice();
@@ -61,9 +85,11 @@ class FormInClass extends React.Component {
   
 
   render() {
+
+    
+
+    //this.setState({yoM: yearofManufacture});
     let records = this.props.scoreCard.records.map(e => e.map(g=> <td>{g}</td>))
-    //let test = this.state.a.map
-    //let test = this.state.inputArray.map((currElement,index)=>{return(currElement)})
     return (
       <div className="FormClass">
           <Form>
@@ -128,16 +154,49 @@ class FormInClass extends React.Component {
         <br/>
           
           */}
-        <select class="greentext" onChange={this.handleChange}>
-          <option disabled="disabled" selected="selected">Test</option>
-          <option class="greentext" value="Audi">Audi</option>
-          <option class="redtext" value="BMV">BMW</option>
-          <option class="bluetext" value="Mercedes">Mercedes</option>
-          <option class="yellowtext" value="Volvo">Volvo</option>
-          <Button onClick={this.getSubjectandScores}>Submit</Button>
+        {/* React Bootstrap of select and option */}
+        <Form.Control
+          as="select"
+          custom
+          onChange={this.handleChange}
+          className="selectWidth"
+          >
+              <option disabled="disabled" selected="selected">Car Brandnew</option>
+              <option value="Audi" className="AudiCheck">Audi</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes">Mercedes</option>
+              <option value="Volvo">Volvo</option>
+        </Form.Control>
+        {/* Original select and option 
+        <select onChange={this.handleChange}>
+          <option disabled="disabled" selected="selected">Car Brandnew</option>
+          <option value="Audi">Audi</option>
+          <option value="BMW">BMW</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="Volvo">Volvo</option>
         </select>
+        */}
+        
+        
         <br/>
-        <p class="demo">{this.state.value}</p>
+        <p class="demo">
+          <ul>
+            <li>
+              {this.state.value}
+              <ul>
+                <li>
+                  Year of Manufacture: {this.state.yom}
+                </li>
+                <li>
+                  Litter: {this.state.lit}
+                </li>
+                <li>
+                  Made in Location: {this.state.mil}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </p>
         
         <table>
           
@@ -169,8 +228,6 @@ class FormInClass extends React.Component {
   }
 }
 
-export default FormInClass;
+export {FormInClass}
+//ref: https://wcc723.github.io/development/2020/03/25/import-export/
 
-/*const wrapper = document.getElementById("container");
-wrapper ? ReactDOM.render(<Form />, wrapper) : false;
-*/

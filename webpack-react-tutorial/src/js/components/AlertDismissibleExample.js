@@ -56,5 +56,8 @@ class Example extends React.Component {
 		);
 	}
 }
-export default Example;
+export {Example};
+//ref: https://wcc723.github.io/development/2020/03/25/import-export/
+
+//export default Example;
 //export default () => (<div><ReactBootstrapStyle /><Example /></div>)
