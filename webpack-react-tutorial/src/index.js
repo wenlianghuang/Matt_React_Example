@@ -8,5 +8,7 @@ import {columnIndex,scoreCard} from "./js/components/TestinClassData";
 import {Example} from "./js/components/AlertDismissibleExample";
 import {CarDetail} from "./js/components/CarDetail";
 ReactDOM.render(<FormInClass scoreCard={scoreCard} columnIndex={columnIndex} CarDetail={CarDetail} />,document.getElementById('container'));
-ReactDOM.render(<Example/>,document.getElementById("Test"));
-//ReactDOM.render(<TestforMe scoreCard = {scoreCard} columnIndex = {columnIndex} />,document.getElementById("ExampleinClass"))
+
+//Instead with Hook
+//ReactDOM.render(<Example/>,document.getElementById("Test"));
+

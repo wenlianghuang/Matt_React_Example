@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import '../../css/TestinClass.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import AlertwithHook from './AlertDismissiblewithHook'
 import List from 'react-bootstrap/ListGroup';
 import ListGroup from "react-bootstrap/ListGroup";
 class FormInClass extends React.Component {
@@ -58,7 +59,6 @@ class FormInClass extends React.Component {
       subjectandscore.push(input[i].value);
       //this.props.scoreCard.records.map(e => e.push({a}))
     }*/
-
     let yourName = String(name + "'s Transcript");
     this.setState({
       captionName: yourName,
@@ -222,7 +222,8 @@ class FormInClass extends React.Component {
             
           </tbody>
         </table>
-        
+        {/** Hook for example */}
+        <AlertwithHook/>
       </div>
     );
   }

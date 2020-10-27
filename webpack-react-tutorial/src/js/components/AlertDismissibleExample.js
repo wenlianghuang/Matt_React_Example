@@ -10,7 +10,7 @@ class Example extends React.Component {
 
 		this.state = { show: true };
 	}
-
+	
 	render() {
 		const handleHide = () => this.setState({ show: false });
 		const handleShow = () => this.setState({ show: true });
