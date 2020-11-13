@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
-import {useParams} from 'react-router-dom';
+import {NavLink,useParams} from 'react-router-dom';
 import Image from './Image';
-export default function ImageView(){
+import {ImgArray} from './ExternalArray';
+export default (props) => {
     let { id } = useParams();
-    const IMAGES = [
-        { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-        { id: 1, title: "Lime Green", color: "LimeGreen" },
-        { id: 2, title: "Tomato", color: "Tomato" },
-        { id: 3, title: "Seven Ate Nine", color: "#789" },
-        { id: 4, title: "Crimson", color: "Crimson" }
-      ];
-    let image = IMAGES[parseInt(id, 10)];
+    let image = ImgArray[parseInt(id, 10)];
     if (!image) return <div>Image not found</div>;
 
     return(
         <div>
             <h1>{image.title}</h1>
             <Image color={image.color}/>
+            <button>
+                <NavLink to='/'>home</NavLink>
+            </button>
         </div>
     )
 }

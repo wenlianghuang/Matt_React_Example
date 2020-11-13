@@ -1,4 +1,4 @@
-export default function Thumbnail({ color }) {
+export default ({ color }) => {
   return (
     <div
       style={{

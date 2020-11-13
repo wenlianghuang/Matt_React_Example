@@ -1,4 +1,4 @@
-export default function Image({color}){
+export default ({color}) => {
     return(
         <div
             style={{
