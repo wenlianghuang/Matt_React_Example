@@ -1,0 +1,56 @@
+.style_fill {
+    position: "absolute";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.style_nav {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+.style_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+    text-align: center;
+
+}
+
+.style_hsl {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: white;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.style_rgb {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: white;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.style_navItem {
+    text-align: center;
+    flex: 1px;
+    list-style-type: none;
+    padding: 10px;
+}
